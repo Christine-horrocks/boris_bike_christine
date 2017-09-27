@@ -1,7 +1,12 @@
 require "DockingStation"
 
 describe DockingStation do
-  #it 'returns docking_station when passed DockingStation' do
-  #  expect(docking_station).to eq DockingStation
-  #end
+
+  describe ".release_bike" do
+    context "given method release_bike" do
+      it 'responds' do
+        expect(subject).to respond_to :release_bike
+      end
+    end
+  end
 end
