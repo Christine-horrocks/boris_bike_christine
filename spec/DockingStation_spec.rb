@@ -17,7 +17,7 @@ describe DockingStation do
   end
 
   it 'raises an error when you try to dock a bike when it has reached capacity' do
-    20.times { subject.dock Bike.new }
+    subject.DEFAULT_CAPACITY.times { subject.dock Bike.new }
     expect { subject.dock Bike.new }.to raise_error 'At capacity'
   end
   #
