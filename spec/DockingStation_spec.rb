@@ -13,6 +13,16 @@ describe DockingStation do
         expect(bike.working?).to be true
       end
 
+      it 'is possible to dock a bike to the DockingStation' do
+        bike = Bike.new
+        subject.dock bike
+        expect(subject.bike).to eq(bike)
+      end
+
+
+    #  it 'is possibel to see if there is a bike in the DockingStation' do
+      #  expect(subject).to respond_to(:bike)
+    #  end
 end
 
 #describe Bike do
