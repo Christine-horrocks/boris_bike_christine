@@ -20,13 +20,9 @@ describe DockingStation do
         expect{subject.release_bike}.to raise_error 'No bikes available'
       end
 
-    #  it 'is possibel to see if there is a bike in the DockingStation' do
-      #  expect(subject).to respond_to(:bike)
-    #  end
-end
+      it 'raises an error when you try to dock a bike when it has reached capacity' do
+        subject.dock Bike.new
+        expect{subject.dock Bike.new}.to raise_error 'At capacity'
+      end
 
-#describe Bike do
-#    it 'when we call method working? on an instance of bike it answers true' do
-#      expect(subject.working?).to be true
-#    end
-#  end
+end

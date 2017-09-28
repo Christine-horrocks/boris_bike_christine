@@ -11,6 +11,7 @@ class DockingStation
   end
 
   def dock(bike)
+      fail 'At capacity' if @bike
     @bike = bike
   end
 end
