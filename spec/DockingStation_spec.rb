@@ -17,11 +17,16 @@ describe DockingStation do
   end
 
   it 'raises an error when you try to dock a bike when it has reached capacity' do
-    subject.DEFAULT_CAPACITY.times { subject.dock Bike.new }
+    subject.capacity.times { subject.dock Bike.new }
     expect { subject.dock Bike.new }.to raise_error 'At capacity'
   end
-  #
-  # it 'has a default capacity of 20 bikes' do
-  #   expect(subject.DEFAULT_CAPACITY).to eq 20
-  # end
+
+  it 'allows the user to set a capacity instance variable when DockingStation.new is called.' do
+    docking_station = DockingStation.new(30)
+    expect(docking_station.capacity).to eq(30)
+  end
+
+   it 'has a default capacity of 20 bikes' do
+     expect(subject.capacity).to eq 20
+   end
 end
