@@ -1,10 +1,14 @@
 require 'Bike'
 
 describe Bike do
-  it "Responds to working? method" do
-    expect(subject).to respond_to :working?
+
+  it 'a newly created bike will be working' do
+    expect(Bike.new.working).to be true
   end
-  it 'when we call method working? on an instance of bike it answers true' do
-    expect(Bike.new.working?).to be true
+
+  it 'is possible for a user to report a faulty bike' do
+    subject.working = false
+    expect(subject.working).to eq false
   end
+
 end
